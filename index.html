@@ -5,16 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECMAScript</title>
+    <style>
+        #box {
+            display: flex;
+            justify-content: space-around;
+        }
+        #box > div {
+            height: 5em;
+            width: 5em;
+            background-color: purple;
+        }
+    </style>
 </head>
 <body>
     <h1>Let</h1>
+    <div id="box"></div>
     <script type="text/javascript">
-        var topic = "JavaScript";
-        if(topic){
-            let topic = "ECMAScript";
-            console.log("block", topic);
+        var div;
+        var box = document.getElementById("box");
+
+//The word 'let' is used to have a scope only in the loop 
+//and the alert with the appropriate id will work correctly, 
+//if it is changed to 'var' it is replaced with the last id,
+// that is, the number 5 remains fixed
+        for (let i=0; i<5; i++){
+            div = document.createElement("div");
+            div.onclick = function(){
+                alert("This is box #" + i);
+            }
+            box.appendChild(div);
         }
-        console.log("global", topic);
     </script>
 </body>
 </html>
