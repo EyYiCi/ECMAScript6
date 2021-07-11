@@ -18,3 +18,12 @@ function createOtherExample(firstName, price){
 
 print("EyYiCi"); 
 createOtherExample("Ale", 474);
+
+//Example the DevF
+
+function master(programa, ...senseis){
+    console.log(`Bienvenido a ${programa}`);
+    console.log(`Senseis: ${senseis[0]} ,  ${senseis[1]} , ${senseis[2]} `);
+}
+
+master('Master en Coding', 'Mali','Maui','Dani');
